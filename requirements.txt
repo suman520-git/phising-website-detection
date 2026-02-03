@@ -18,4 +18,17 @@ tldextract
 dnspython 
 python-whois
 
+
+
+pydantic==2.8.2
+python-dotenv==1.0.1
+
+
+groq
+langchain
+langchain-community
+langchain-core
+langchain-groq
+
+
 -e .
