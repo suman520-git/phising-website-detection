@@ -102,7 +102,21 @@ conda activate venv/
 pip install -r requirements.txt
 ```
 
-### 2. Training ML models
+### 2. Configuring the MLFLOW in the project
+
+```bash
+# commnds 
+step.1  pip install  mlflow
+step.2  mlflow ui
+
+visit for mlflow ui : 127.0.0.1:5000
+```
+
+## MLFLOW UI
+![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/ML-UI.png?raw=true)
+
+
+### 3. Training ML models
 
 ```bash
 # For training the models on the dataset
@@ -110,7 +124,7 @@ step.1  python -m run_pipeline
 
 ```
 
-### 3. API Usage
+### 4. API Usage
 
 ```bash
 # For running the application through Fastapi(command for running the ml application)
@@ -122,7 +136,7 @@ step.1  uvicorn api.main:app --reload
 
 
 
-### 4.  Dockerization
+### 5.  Dockerization
 ```bash
 # Build Docker Image
 step.1 docker build -t test .
