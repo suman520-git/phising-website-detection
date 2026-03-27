@@ -3,9 +3,10 @@
 Detection of given url wheather Legit website or Phishing website.
 
 ##  Project Overview
-https://github.com/suman520-git/phising-website-detection/blob/main/data/phising.csv
 
-![image alt](https://github.com/suman520-git/ecomm-prod-assistant/blob/main/corrective%20Rag.png?raw=true)
+![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/data/features_1.png?raw=true)
+![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/data/features_2.png?raw=true)
+
 
 1.Web Scraping the FlipKart ecommerce platform for the given products search and saved  product details and reviews in CSV file.
 
