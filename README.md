@@ -118,7 +118,7 @@ step.1  uvicorn api.main:app --reload
 
 ```
 ## Application UI
-![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/data/features_1.png?raw=true)
+![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/ML-UI.png?raw=true)
 
 
 
