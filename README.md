@@ -3,110 +3,85 @@
 Detection of given url wheather Legit website or Phishing website.
 
 ##  Project Overview
-
+# FEATURES OF THE DATASET.
 ![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/data/features_1.png?raw=true)
 ![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/data/features_2.png?raw=true)
 
 
-1.Web Scraping the FlipKart ecommerce platform for the given products search and saved  product details and reviews in CSV file.
+1.Dataset have  30 independent features of URL which are used to predict , and 1 dependent feature to be predicted as legit or phishing website.
 
-2.Converting the CSV data in to vector form and storing in ASTRA DB vectore store later used s a retriever.
+2.Data cleaning like removing null values ,duplicate rows have removed , EDA has done on the data.
 
-3.Converting retriver as tool for data retrieval in RAG system
+4.Data preprocessing has done.
 
-4.Adding duckduckgo as a web searching tool.
+3.Two  models have been trained on the training dataset and tested models on the testing dataset.
 
-4.Binding LLM with retriver tool and duckduckgo tool
-
-5.Building  an agentic RAG system(Corrective RAG) that can decide when to use the retriever tool and web search tool.
-
-6.Building API with FastAPI 
-
-7.Creation of streamlit app file for front end web scraping
-
-
-
-## Corrective RAG workflow
-![image alt](https://github.com/suman520-git/ecomm-prod-assistant/blob/main/corrective%20Rag.png?raw=true)
+4.During inference pipeline ,for the given URL , features same as 30 features from the dataset have been extracted from the given URL and passed to trained Models to get prediction like Legit or Phishing website
 
 ## Project Structure
 ```
-ecomm-prod-assistant                             
-├─ data                                          
-│  └─ product_reviews.csv                        
-├─ .github                                        
-│  └─ workflows                                  
-│     ├─ deploy.yml                              
-│     └─ infra.yml                               
-├─ infra                                         
-│  └─ eks-with-ecr.yaml                          
-├─ k8                                            
-│  ├─ deployment.yaml                            
-│  └─ service.yaml                               
-├─ notebook                                      
-│  └─ test.ipynb                                 
-├─ prod_assistant                                
-│  ├─ config                                     
-│  │  ├─ config.yaml                             
-│  │  └─ __init__.py                             
-│  ├─ etl                                        
-│  │  ├─ logs                                    
-│  │  │  └─ 11_09_2025_00_56_25.log              
-│  │  ├─ data_ingestion.py                       
-│  │  ├─ data_scrapper.py                        
-│  │  └─ __init__.py                             
-│  ├─ evaluation                                 
-│  │  ├─ ragas_eval.py                           
-│  │  └─ __init__.py                             
-│  ├─ exception                                  
-│  │  ├─ custom_exception.py                     
-│  │  └─ __init__.py                             
-│  ├─ logger                                     
-│  │  ├─ custom_logger.py                        
-│  │  └─ __init__.py                             
-│  ├─ mcp_servers                                
-│  │  ├─ client.py                               
-│  │  ├─ product_search_server.py                
-│  │  └─ __init__.py                             
-│  ├─ prompt_library                             
-│  │  ├─ prompts.py                              
-│  │  └─ __init__.py                             
-│  ├─ retriever                                  
-│  │  ├─ retrieval.py                            
-│  │  └─ __init__.py                             
-│  ├─ router                                     
-│  │  ├─ main.py                                 
-│  │  └─ __init__.py                             
-│  ├─ utils                                      
-│  │  ├─ config_loader.py                        
-│  │  ├─ model_loader.py                         
-│  │  └─ __init__.py                             
-│  ├─ workflow                                   
-│  │  ├─ agentic_rag_workflow.py                 
-│  │  ├─ agentic_workflow_with_mcp.py            
-│  │  ├─ agentic_workflow_with_mcp_websearch.py  
-│  │  ├─ normal_generation_workflow.py           
-│  │  └─ __init__.py                             
-│  └─ __init__.py                                
-├─ static                                        
-│  ├─ f6634145-b9d9-4ea1-b5e5-cb705192c6fd.png   
-│  └─ style.css                                  
-├─ templates                                     
-│  └─ chat.html                                  
-├─ test                                          
-│  └─ __init__.py                                
-├─ corrective Rag.png                            
-├─ Dockerfile                                    
-├─ get_lib_versions.py                           
-├─ main.py                                       
-├─ pyproject.toml                                
-├─ README.md                                     
-├─ requirements.txt                              
-├─ scrapper_ui.py                                
-└─ setup.py                                      
-                     
-
-
+phising-website-detection                       
+├─ api                                          
+│  ├─ templates                                 
+│  │  ├─ index.html                             
+│  │  └─ index_archive.html                     
+│  ├─ main.py                                   
+│  └─ main_archive.py                           
+├─ artifacts                                    
+│  ├─ ann_mlp_model.pkl                         
+│  ├─ scaler.pkl                                
+│  └─ xgb_model.pkl                             
+├─ backend                                      
+│  ├─ app.py                                    
+│  └─ app__.py                                  
+├─ data                                         
+│  ├─ features_1.png                            
+│  ├─ features_2.png                            
+│  └─ phising.csv                               
+├─ inference                                    
+│  ├─ predictor.py                              
+│  └─ __init__.py                               
+├─ mlruns                                       
+│  └─ 1                                         
+│     └─ models                                 
+│        ├─ m-ce3d2e63bdca4680b8cdfa1e4ae54004  
+│        │  └─ artifacts                        
+│        │     ├─ conda.yaml                    
+│        │     ├─ MLmodel                       
+│        │     ├─ model.pkl                     
+│        │     ├─ python_env.yaml               
+│        │     └─ requirements.txt              
+│        └─ m-f1ca879033834835a8d7dbb8041e2d87  
+│           └─ artifacts                        
+│              ├─ conda.yaml                    
+│              ├─ MLmodel                       
+│              ├─ model.pkl                     
+│              ├─ python_env.yaml               
+│              └─ requirements.txt              
+├─ notebook                                     
+│  ├─ EDA.ipynb                                 
+│  ├─ exp.ipynb                                 
+│  └─ phising.csv                               
+├─ src                                          
+│  ├─ config_loader.py                          
+│  ├─ data_loader.py                            
+│  ├─ pipeline.py                               
+│  ├─ preprocessor.py                           
+│  ├─ train_ann.py                              
+│  ├─ train_xgboost.py                          
+│  ├─ utils.py                                  
+│  ├─ website_feature_extraction.py             
+│  └─ __init__.py                               
+├─ templates                                    
+│  └─ index.html                                
+├─ config.yaml                                  
+├─ Dockerfile                                   
+├─ mlflow.db                                    
+├─ pyproject.toml                               
+├─ README.md                                    
+├─ requirements.txt                             
+├─ run_pipeline.py                              
+└─ setup.py                                     
 
 ```
 
