@@ -192,6 +192,8 @@ if __name__ == "__main__":
     #url = "http://google.com.secure-login.verify-account.example.com/"
     # url = "http://google.com/"
     features = extractor.extract(url)
+
+    
     # print("\nExtracted Features:")
     # for k, v in features.items():
     #     print(f"  {k}: {v}")
@@ -201,3 +203,8 @@ if __name__ == "__main__":
 
     print("\n--- ANN (MLPClassifier) Prediction ---")
     print(predict(features, model_type="ann"))
+
+
+    print("features________________________________________________________________",features)
+
+    print(len(features))
