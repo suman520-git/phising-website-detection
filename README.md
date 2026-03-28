@@ -113,7 +113,7 @@ visit for mlflow ui : 127.0.0.1:5000
 ```
 
 ## MLFLOW UI
-![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/ML-UI.png?raw=true)
+![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/MLflow-1.png?raw=true)
 
 
 ### 3. Training ML models
@@ -131,7 +131,7 @@ step.1  python -m run_pipeline
 step.1  uvicorn api.main:app --reload
 
 ```
-## Application UI
+## ML Application UI
 ![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/ML-UI.png?raw=true)
 
 
@@ -159,4 +159,26 @@ Create ECR repo copy the URI and keep it to ECR_REPO
 Create a IAM user a provide this permission: AdministratorAccess
 
 ```
+###########################################################################################
 
+# Phising-website-detection(LLM Powered)
+
+## Gen-AI Application UI
+![image alt](https://github.com/suman520-git/phising-website-detection/blob/main/Gen_UI.png?raw=true)
+
+
+### 1. Create environment file (Edit .env with your API keys)
+
+
+```bash
+1. GROQ_API_KEY = "xxxxx"
+2. GROQ_MODEL= "xxxxx"
+
+```
+### 2. API Usage
+
+```bash
+# For running the application through Fastapi(command for running the Gen AI application)
+step.1  uvicorn backend.app:app --reload
+
+```
