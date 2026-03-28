@@ -146,7 +146,7 @@ step.2 docker run --rm -p 8000:8005 test
 
 ```
 
-### 5. Deployment to AWS APP Runner
+### 6. Deployment to AWS APP Runner
 ```bash
 Repository secrets
 
